@@ -851,6 +851,16 @@ hr {
    
 }
 
+.banner1 {
+    display: flex;
+    justify-content: space-around;
+    margin: 10px 0px;
+    margin-top: -50px;
+   
+}
+
+
+
 .banner_image {
     width: 50%;
     
@@ -858,7 +868,7 @@ hr {
 
 .banner_image2 {
     width: 50%;
-    margin-bottom: 20px;
+    
     
 }
 
