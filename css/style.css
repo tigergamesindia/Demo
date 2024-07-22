@@ -851,14 +851,18 @@ hr {
    
 }
 
-.banner1 {
+/* .banner1 {
     display: flex;
     justify-content: space-around;
     margin: 10px 0px;
     margin-top: -30px;
-    width: 120%;
+    width: 100%;
    
-}
+} */
+ .ima{
+    height: 1500%;
+    width: 1500%;
+ }
 
 
 
