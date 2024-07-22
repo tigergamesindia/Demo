@@ -855,7 +855,7 @@ hr {
     display: flex;
     justify-content: space-around;
     margin: 10px 0px;
-    margin-top: -50px;
+    margin-top: -30px;
     width: 120%;
    
 }
@@ -867,11 +867,11 @@ hr {
     
 }
 
-.banner_image2 {
+/* .banner_image2 {
     width: 500%;
     
     
-}
+} */
 
 .banner_text {
     padding-left: 10px;
