@@ -7,9 +7,11 @@ body {
     /* font-size: 1em; */
     font-weight: 400;
     line-height: 1.5;
-    background: linear-gradient(#353945 80%, #3D486D);
-   
-    
+    /* background: linear-gradient(#4851cf , #1e253e); */
+    background-image: url("../backimggg.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 
@@ -860,7 +862,7 @@ hr {
    
 } */
  .ima{
-    height: 37vh;
+    /* height: 37vh; */
     width: 100%;
  }
 
