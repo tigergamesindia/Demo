@@ -860,8 +860,8 @@ hr {
    
 } */
  .ima{
-    height: 350%;
-    width: 350%;
+    height: auto;
+    max-width: 100%;
  }
 
 
