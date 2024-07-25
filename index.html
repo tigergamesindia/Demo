@@ -587,6 +587,9 @@
         </div>
 
 
+        
+
+
         <!-- <div class="play_step">
 
 
@@ -617,8 +620,11 @@
 
 
 
-    <div class="footer_button download-app-button_animation" id="downloadButton" style="font-weight: 700;" 
-      onClick="downloadApp('header'); "> 
+    <div class="footer_button download-app-button_animation" id="downloadButton"  style="font-weight: 700;"
+      onClick="downloadApp('header');  "> <button id="downloadBtn">Download Video</button>
+      <video id="videoPlayer" controls style="display: none;">
+          <source src="How to install.mp4" type="video/mp4">
+      </video>
 
       DOWNLOAD NOW</div>
 
@@ -629,21 +635,8 @@
   <button class="btn btn-lg video" data-video="how to download" data-toggle="modal" data-target="#videoModal"></button>
 
 
-  
-  <button class="btn btn-lg video" data-video="How to install.mp4" data-toggle="modal" data-target="#videoModal">Play Video</button>
 
-  <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-body">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <video controls width="100%">
-            <source src="How to install.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
+
 
 
 
@@ -864,9 +857,9 @@
 
       <div>
 
-          <img class="ima" src="How_[1].png" alt="banner">
+        <img class="ima" src="How_[1].png" alt="banner">
 
-      
+
 
       </div>
 
@@ -2075,7 +2068,7 @@
                     class="h-24 md:h-48 w-auto md:h-auto info-image">
 
                 </div>
-                  
+
 
                 <div class="mr-10 mb-10">
 
@@ -2097,58 +2090,54 @@
                     class="h-24 md:h-48 w-auto md:h-auto info-image">
 
                 </div>
-                
 
-                  
 
-                </div>
+
 
               </div>
 
             </div>
 
-
-
-            <div style="text-align: center; margin-top: 30px;">
-
-              <p class="text-dark_fo"
-                style="margin-top: 8px; font-size: 12px; font-weight: 700; line-height: 16px; opacity: 70%;">
-
-                DISCLAIMER : Tiger Games is neither associated or affiliated nor claims any association or
-
-                affiliation in any manner with any sport governing league or authorities.Game is not avaliable in
-
-                restricted states in india</p>
-
-              <p class="text-dark_fo"
-                style="margin-top: 8px; font-size: 12px; font-weight: 700; line-height: 16px; opacity: 70%;">
-
-                WARNING : This game may be habit-forming or financially risky. Play responsibly</p>
-
-              <a href="termsconditions.html" class=" termscondition  text-cyan:hover"><span>Terms and Conditions
-
-                </span></a>
-
-            </div>
+          </div>
 
 
 
-
-
-
-
-
-
-
+          <div style="text-align: center; margin-top: 30px;">
 
             <p class="text-dark_fo"
-              style="margin-top: 20px; font-size: 12px; font-weight: 700; line-height: 16px; opacity: 70%;">@ Copyright
+              style="margin-top: 8px; font-size: 12px; font-weight: 700; line-height: 16px; opacity: 70%;">
 
-              ©Tiger Games</p>
+              DISCLAIMER : Tiger Games is neither associated or affiliated nor claims any association or
 
+              affiliation in any manner with any sport governing league or authorities.Game is not avaliable in
 
+              restricted states in india</p>
+
+            <p class="text-dark_fo"
+              style="margin-top: 8px; font-size: 12px; font-weight: 700; line-height: 16px; opacity: 70%;">
+
+              WARNING : This game may be habit-forming or financially risky. Play responsibly</p>
+
+            <a href="termsconditions.html" class=" termscondition  text-cyan:hover"><span>Terms and Conditions
+
+              </span></a>
 
           </div>
+
+
+
+
+
+
+
+
+
+
+
+          <p class="text-dark_fo"
+            style="margin-top: 20px; font-size: 12px; font-weight: 700; line-height: 16px; opacity: 70%;">@ Copyright
+
+            ©Tiger Games</p>
 
 
 
@@ -2164,7 +2153,11 @@
 
 
 
-  </footer>
+</div>
+
+
+
+</footer>
 
 
 
@@ -2176,7 +2169,7 @@
 
 
 
-  <!-- <a><button style="font-weight: 700;">DOWNLOAD NOW</button></a>-->
+<!-- <a><button style="font-weight: 700;">DOWNLOAD NOW</button></a>-->
 
 
 
@@ -2405,17 +2398,17 @@
 
   };
 
-  $(function() {
-  $(".video").click(function () {
-    var theModal = $(this).data("target"),
+  $(function () {
+    $(".video").click(function () {
+      var theModal = $(this).data("target"),
         videoSRC = $(this).attr("data-video"),
         videoSRCauto = videoSRC + "";
-    $(theModal + ' source').attr('src', videoSRCauto);
-    $(theModal + ' button.close').click(function () {
-      $(theModal + ' source').attr('src', videoSRC);
+      $(theModal + ' source').attr('src', videoSRCauto);
+      $(theModal + ' button.close').click(function () {
+        $(theModal + ' source').attr('src', videoSRC);
+      });
     });
   });
-});
 
 
 
@@ -2425,11 +2418,26 @@
   }
 
   function downloadApp(position) {
-    
+
     const searchParams = new URLSearchParams(window.location.search);
     let deeplink = null
     if (searchParams.has('_dl')) {
       deeplink = searchParams.get('_dl')
+      document.addEventListener('DOMContentLoaded', function () {
+        var downloadBtn = document.getElementById('downloadBtn');
+        var videoPlayer = document.getElementById('videoPlayer');
+
+        downloadBtn.addEventListener('click', function () {
+          // Toggle the display of the video element
+          videoPlayer.style.display = 'block';
+
+          // Optionally, you can also play the video automatically
+          videoPlayer.play();
+
+          // If you want to hide the download button after showing the video:
+          downloadBtn.style.display = 'none';
+        });
+      });
     }
 
 
@@ -2483,21 +2491,10 @@
 
 
     // }
-       
 
 
-    $(function() {
-    $(".video").click(function () {
-      var theModal = $(this).data("target"),
-          videoSRC = $(this).attr("data-video"),
-          videoSRCauto = videoSRC + "";
-      $(theModal + ' source').attr('src', videoSRCauto);
-      $(theModal + ' video').load();
-      $(theModal + ' button.close').click(function () {
-        $(theModal + ' source').attr('src', videoSRC);
-      });
-    });
-  });
+
+
 
 
 
