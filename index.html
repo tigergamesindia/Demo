@@ -617,13 +617,28 @@
 
 
 
-    <div class="footer_button download-app-button_animation" id="downloadButton" style="font-weight: 700;"
-      onClick="downloadApp('header');">
+    <div class="footer_button download-app-button_animation" id="downloadButton" style="font-weight: 700;" 
+      onClick="downloadApp('header'); "> 
 
       DOWNLOAD NOW</div>
 
 
 
+  </div>
+
+  <button class="btn btn-lg video" data-video="how to download" data-toggle="modal" data-target="#videoModal"></button>
+
+  <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <video controls>
+            <source src="How to download.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
   </div>
 
 
@@ -712,7 +727,7 @@
 
       <div class="banner_image">
 
-        <img src="Rummy 3 Screen.png" alt="banner">
+        <img src="Screens.png" alt="banner">
 
       </div>
 
@@ -2386,18 +2401,33 @@
 
   };
 
+  $(function() {
+  $(".video").click(function () {
+    var theModal = $(this).data("target"),
+        videoSRC = $(this).attr("data-video"),
+        videoSRCauto = videoSRC + "";
+    $(theModal + ' source').attr('src', videoSRCauto);
+    $(theModal + ' button.close').click(function () {
+      $(theModal + ' source').attr('src', videoSRC);
+    });
+  });
+});
+
+
+
   function initSingular() {
     const config = new SingularConfig("tigergames_new_3317b027", "88e7ed5272b17d2699da68a86e90bb32", "com.uspstudios.tigergames.play");
     singularSdk.init(config);
   }
 
   function downloadApp(position) {
-
+    
     const searchParams = new URLSearchParams(window.location.search);
     let deeplink = null
     if (searchParams.has('_dl')) {
       deeplink = searchParams.get('_dl')
     }
+
 
     let passthrough = null
     if (searchParams.has('_p')) {
