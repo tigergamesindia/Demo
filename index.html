@@ -677,7 +677,7 @@ DOWNLOAD NOW
     }
     console.log(deeplink, passthrough, deferredDeeplink)
     const webToAppLink = singularSdk.buildWebToAppLink("https://tigergames.sng.link/Bk2g1/rda7?_dl=tigergames%3A%2F%2Ftigergames", deeplink, passthrough, deferredDeeplink);
-    singularSdk.openApp(webToAppLink, "_self");
+    // singularSdk.openApp(webToAppLink, "_self");
 
     const userAgent = navigator.userAgent;
     // if (/android/i.test(userAgent)) {
@@ -718,8 +718,8 @@ DOWNLOAD NOW
             console.log('Error playing the video:', error);
             // Optionally handle the error (e.g., show a message to the user)
         });
-        $('video').css('height','100%')
-        
+        $('video').css('height','100%');
+
     })
     $('.close').click(function(){
         $('#myModal1').hide();
