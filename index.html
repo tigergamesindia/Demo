@@ -718,9 +718,12 @@ DOWNLOAD NOW
             console.log('Error playing the video:', error);
             // Optionally handle the error (e.g., show a message to the user)
         });
-        $('video').css('height','100%');
-
-    })
+        if($(window).width() < 767){
+          $('video').addClass('h-100');
+        }
+        
+    });
+    
     $('.close').click(function(){
         $('#myModal1').hide();
         $('video').addClass('d-none');
