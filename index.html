@@ -677,22 +677,14 @@ DOWNLOAD NOW
     }
     console.log(deeplink, passthrough, deferredDeeplink)
     const webToAppLink = singularSdk.buildWebToAppLink("https://tigergames.sng.link/Bk2g1/rda7?_dl=tigergames%3A%2F%2Ftigergames", deeplink, passthrough, deferredDeeplink);
-    singularSdk.openApp(webToAppLink)
+    // singularSdk.openApp(webToAppLink);
+
     const userAgent = navigator.userAgent;
     // if (/android/i.test(userAgent)) {
-     window.location.href = "https://apk.tigergames.in/yesno/tigergames.apk";
+     window.open("https://apk.tigergames.in/yesno/tigergames.apk", "_self");
+     this.innerText = "Downloading...";
     // window.location.href = "https://tigergame.sng.link/Bk2g1/rda7?_dl=tigergames%3A%2F%2F";
-    document.getElementById("downloadButton").addEventListener("click", function () {
-      // Disable the button to prevent multiple clicks
-      this.disabled = true;
-      
-      // Change the button text to indicate the download is in progress
-      this.innerText = "Downloading...";
-      // Simulate a delay before opening the next page
-      setTimeout(function () {
-        // Navigate to the next page where the download will start
-      }, 3000); // 3000 milliseconds (3 seconds) delay, you can adjust as needed
-    });
+    
     // }
     //Adding Button click conversion
    gtag_report_conversion();
