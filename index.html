@@ -135,7 +135,7 @@ DOWNLOAD NOW
             </button>
         </div>
             <div class="modal-body">
-                <video width="100%" height="400" playsinline controls webkit-playsinline> 
+                <video width="100%" height="400" id="myVideo" playsinline controls webkit-playsinline> 
                     <source src= "How-to-install-new.mp4" type="video/mp4"> 
                 </video>
             </div>
@@ -685,6 +685,7 @@ DOWNLOAD NOW
     document.getElementById("downloadButton").addEventListener("click", function () {
       // Disable the button to prevent multiple clicks
       this.disabled = true;
+      
       // Change the button text to indicate the download is in progress
       this.innerText = "Downloading...";
       // Simulate a delay before opening the next page
@@ -715,13 +716,21 @@ DOWNLOAD NOW
 <script>
   $(document).ready(function () {
     $(".conttoggle").hide();
+    var video = $('#myVideo').get(0);
     $('#downloadButton').click(function(){
         $('#myModal1').show();
+        $('video').removeClass('d-none');
         $('video').prop('autoplay', true);
+        
+        video.play().catch(function(error) {
+            console.log('Error playing the video:', error);
+            // Optionally handle the error (e.g., show a message to the user)
+        });
     })
     $('.close').click(function(){
         $('#myModal1').hide();
         $('video').addClass('d-none');
+        video.pause();
     })
     $(".contshow").click(function () {
       $(".conttoggle").slideToggle("slow");
