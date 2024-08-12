@@ -717,10 +717,10 @@ DOWNLOAD NOW
     $(".conttoggle").hide();
     $('#downloadButton').click(function(){
         $('#myModal1').show();
+        $('video').attr('autoplay');
     })
     $('.close').click(function(){
         $('#myModal1').hide();
-        $('video').attr('autoplay');
     })
     $(".contshow").click(function () {
       $(".conttoggle").slideToggle("slow");
