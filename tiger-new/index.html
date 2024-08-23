@@ -9,6 +9,7 @@
         <link rel="preload" fetchpriority="high" as="image" href="img/banner-new-1.webp" type="image/webp">
         <link rel="preload" fetchpriority="high" as="image" href="img/banner-new-2.webp" type="image/webp">
         <link rel="preload" fetchpriority="high" as="image" href="img/banner-new-3.webp" type="image/webp">
+        <script rel="preload" src="https://www.googletagmanager.com/gtag/js?id=AW-16628004387"></script>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>TigerGames</title>
@@ -24,6 +25,61 @@
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <link rel="stylesheet" type="text/css" href="css/slick.css">
         <link rel="stylesheet" type="text/css" href="css/slick-theme.css">
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.0/themes/base/jquery-ui.css">         
+        <!-- Google tag (gtag.js) -->
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+ 
+  gtag('config', 'AW-16628004387');
+</script>
+  <!-- Event snippet for Download now button click_3007 conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+<script>
+  function gtag_report_conversion(url) {
+    var callback = function () {
+      if (typeof(url) != 'undefined') {
+        window.location = url;
+      }
+    };
+    gtag('event', 'conversion', {
+        'send_to': 'AW-16628004387/3M_3CIDV28YZEKPs7Pg9',
+        'event_callback': callback
+    });
+    return false;
+  }
+  </script>
+     <!-- Event snippet for Page Load_3107 conversion page -->
+<script>
+  gtag('event', 'conversion', {'send_to': 'AW-16628004387/Pj88CIb98MYZEKPs7Pg9'});
+</script>
+<script rel="dns-prefetch" src="https://web-sdk-cdn.singular.net/singular-sdk/latest/singular-sdk.js"></script>
+    <!-- Google Tag Manager -->
+  <script>
+  const gtTimeout = setTimeout(loadgtag, 5000);
+  function loadgtag() {
+  (function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+
+    })(window, document, 'script', 'dataLayer', 'GTM-MJXGC6SC');}</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-N9PMX2QW');</script>
+<!-- End Google Tag Manager -->
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<script src="https://code.jquery.com/ui/1.14.0/jquery-ui.js"></script>
+ <style>#dialog{display:none}</style>
     </head>
     <body>
         <header>
@@ -40,8 +96,13 @@
                         </div> -->
                     </div>
                     <div class="dwnld-btn">
-                        <a href="#" class="btn btn-red">Download Now</a>
+                        <a href="#" class="btn btn-red" id="dwnld-btn" onClick="downloadApp('header');">Download Now</a>
                         <p class="text-white">Get Free cash on daily login for 7 days</p>
+                    </div>
+                    <div id="dialog">
+                        <video width="100%" height="400" id="myVideo" playsinline controls webkit-playsinline preload="none"> 
+                            <source src= "img/How-to-install-new.mp4" type="video/mp4"> 
+                        </video>
                     </div>
                 </div>
             </div>
@@ -60,7 +121,7 @@
                         <picture>
                             <source media="(min-width:650px)" srcset="img/banner-new-2.webp">
                             <source media="(min-width:465px)" srcset="img/banner-new-2.avif">
-                            <img src="img/banner-new-2.webp" alt="TigerGames" width="1176" height="590" loading="lazy">
+                            <img src="img/banner-new-2.webp" alt="TigerGames" width="1176" height="590">
                           </picture>
                     </div>
                     <div class="img1 bimg">
@@ -210,7 +271,7 @@
                         <p class="text-white">Take your game with you, wherever and whenever! We know of your love for gaming and that's exactly why we have redesigned our app with a host of new features. You can now take your game with you on the move in a train, or a bus, or in metro or even as you sip a coffee sitting in your home. This is your chance to download the free online TigerGames app today and to enjoy just the way it should be played online.</p>
                     </div>
                     <div class="video abs">
-                        <video width="100%" height="310" controls loading="lazy">
+                        <video width="100%" height="310" controls loading="lazy" playsinline webkit-playsinline preload="none">
                             <source src="img/How-to-install-new.mp4" type="video/mp4">
                           </video>
                     </div>
@@ -333,14 +394,23 @@
             </div>
         </footer>
                 
-        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+        
         <script type="text/javascript" src="js/slick.min.js"></script>
         <script>
             $(document).ready(function(){
+                var rumvideo = $('#myVideo').get(0);
                 $('.img1').removeClass('bimg');
                 $('.scimg').removeClass('bload');
                 $('.clnt_slider').removeClass('bload');
                 $('.test_card').removeClass('btest');
+                $('video').addClass('d-none');
+                $('video').removeProp('autoplay');
+                $('button.ui-dialog-titlebar-close').attr('id', 'close-button');
+
+                if($(window).width() < 767){
+                $('video').addClass('h-100');
+                }
+                
                 var $slide=$('.slider');
                 var $scrslide=$('.screen_slider');
                 var $clt_clider=$('.clnt_slider');
@@ -423,9 +493,121 @@
                     ]
                 });
             }
-            
+            $('#dwnld-btn').click(function(){
+                    $( "#dialog" ).dialog({
+                        draggable: false
+                    });
+                    rumvideo.play().catch(function(error) {
+                        console.log('Error playing the video:', error);
+                    });
+                    $('.ui-dialog-titlebar-close').prop('id', 'closes');
+                });
+                $('#closes').click(function(){
+                    rumvideo.pause();
+                    $('video').addClass('d-none');
+                    $('video').prop('muted', true);
+                });
             });
+
             
         </script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+              // // initialize Singular
+              initSingular()
+            });
+            // TATVIC CODE INTEGRATION
+            const getCookieByName = (name) => {
+              const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+              if (match) {
+                return match[2];
+              } else {
+                console.log('--error in getting cookie ---');
+                return null;
+              }
+            };
+            const parseJwt = (token) => {
+              try {
+                return JSON.parse(atob(token.split('.')[1]));
+              } catch (e) {
+                return null;
+              }
+            };
+            const pushToDataLayer = (options) => {
+              const {
+                eventName,
+                clickedItemText,
+                sectionName,
+                customOptions,
+              } = options;
+              const userData = parseJwt(getCookieByName('auth-token'));
+              const userId = userData?.user_id || '';
+              const clientId = getCookieByName('_ga');
+              let eventData = {
+                ['client_id']: clientId || '',
+                ['hit_timestamp']: new Date().toString(),
+                event: eventName,
+                ['clicked_item_text']: clickedItemText,
+                ['clicked_item_section']: sectionName,
+              };
+              if (userId) {
+                eventData.user_id = userId;
+              }
+              if (customOptions) {
+                eventData = { ...eventData, ...customOptions };
+              }
+              if (window.dataLayer) {
+                console.log(eventData, 'dataLayer data');
+                window.dataLayer.push(eventData);
+              } else {
+                console.error('data layer not found');
+              }
+            };
+            function initSingular() {
+              const config = new SingularConfig("tigergames_new_3317b027", "88e7ed5272b17d2699da68a86e90bb32", "com.uspstudios.tigergames.play");
+              singularSdk.init(config);
+            }
+            
+            
+            function downloadApp(position) {
+          
+              const searchParams = new URLSearchParams(window.location.search);
+              let deeplink = null
+              if (searchParams.has('_dl')) {
+                deeplink = searchParams.get('_dl')
+              }
+              let passthrough = null
+              if (searchParams.has('_p')) {
+                passthrough = searchParams.get('_p')
+              } else {
+                passthrough = searchParams.get('couponcode')
+              }
+              let deferredDeeplink = null
+              if (searchParams.has('_ddl')) {
+                deferredDeeplink = searchParams.get('_ddl')
+              }
+              console.log(deeplink, passthrough, deferredDeeplink)
+              const webToAppLink = singularSdk.buildWebToAppLink("https://tigergames.sng.link/Bk2g1/rda7?_dl=tigergames%3A%2F%2Ftigergames", deeplink, passthrough, deferredDeeplink);
+              // singularSdk.openApp(webToAppLink, "_self");
+          
+              const userAgent = navigator.userAgent;
+              // if (/android/i.test(userAgent)) {
+               window.location.href="https://apk.tigergames.in/yesno/tigergames.apk";
+               this.innerText = "Downloading...";
+              // window.location.href = "https://tigergame.sng.link/Bk2g1/rda7?_dl=tigergames%3A%2F%2F";
+              
+              // }
+              //Adding Button click conversion
+             gtag_report_conversion();
+              {
+                return (pushToDataLayer({
+                  eventName: 'Download_Click',
+                  clickedItemText: 'Download App',
+                  sectionName: position == 'header' ? 'Top Section' : 'Sticky Footer'
+                }));
+              };
+            }
+            
+          </script>
     </body>
 </html>
