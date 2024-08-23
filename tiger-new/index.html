@@ -100,6 +100,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                         <p class="text-white">Get Free cash on daily login for 7 days</p>
                     </div>
                     <div id="dialog">
+                        <button id="close">Close</button>
                         <video width="100%" height="400" id="myVideo" playsinline controls webkit-playsinline preload="none"> 
                             <source src= "img/How-to-install-new.mp4" type="video/mp4"> 
                         </video>
@@ -271,9 +272,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                         <p class="text-white">Take your game with you, wherever and whenever! We know of your love for gaming and that's exactly why we have redesigned our app with a host of new features. You can now take your game with you on the move in a train, or a bus, or in metro or even as you sip a coffee sitting in your home. This is your chance to download the free online TigerGames app today and to enjoy just the way it should be played online.</p>
                     </div>
                     <div class="video abs">
-                        <video width="100%" height="310" controls loading="lazy" playsinline webkit-playsinline preload="none">
-                            <source src="img/How-to-install-new.mp4" type="video/mp4">
-                          </video>
+                        <iframe width="100%" loading="lazy" height="400" src="https://www.youtube.com/embed/ldikQVROzWY?si=EUd08ZMigQo2R20T" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
                 </div>
                 <div class="newd-section">
@@ -296,7 +295,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     <div class="clnt_slider ofh">
                         <div class="test_card btest">
                             <div class="test_bx">
-                                <img src="img/facebook.png" alt="Client" loading="lazy">
+                                <img src="img/player1.webp" alt="Client" loading="lazy">
                                 <div class="test_cnt">
                                     <p class="name">Rishabh G</p>
                                     <p class="cnt">Win like a Tiger on TigerGames. I find this platform very comfortable to play. A young app with more chances to win.</p>
@@ -305,7 +304,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                         </div>
                         <div class="test_card btest">
                             <div class="test_bx">
-                                <img src="img/facebook.png" alt="Client" loading="lazy">
+                                <img src="img/player2.webp" alt="Client" loading="lazy">
                                 <div class="test_cnt">
                                     <p class="name">Krutarth</p>
                                     <p class="cnt">I play point and deal rummy daily and enjoy it a lot. Game keeps giving a lot of offers</p>
@@ -314,7 +313,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                         </div>
                         <div class="test_card btest">
                             <div class="test_bx">
-                                <img src="img/facebook.png" alt="Client" loading="lazy">
+                                <img src="img/player3.webp" alt="Client" loading="lazy">
                                 <div class="test_cnt">
                                     <p class="name">Shiya</p>
                                     <p class="cnt">I like the tournament variant a lot. Apart from money, it gives me that kick to be on top of the leaderboard.</p>
@@ -323,7 +322,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                         </div>
                         <div class="test_card btest">
                             <div class="test_bx">
-                                <img src="img/facebook.png" alt="Client" loading="lazy">
+                                <img src="img/player4.webp" alt="Client" loading="lazy">
                                 <div class="test_cnt">
                                     <p class="name">Sherry</p>
                                     <p class="cnt">One app I have seen has great customer support. After raising the concern, I instantly received the call and the issue was addressed. Thank you TG.</p>
@@ -398,7 +397,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <script type="text/javascript" src="js/slick.min.js"></script>
         <script>
             $(document).ready(function(){
-                var rumvideo = $('#myVideo').get(0);
+                var video = $('#myVideo').get(0);
                 $('.img1').removeClass('bimg');
                 $('.scimg').removeClass('bload');
                 $('.clnt_slider').removeClass('bload');
@@ -494,18 +493,29 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 });
             }
             $('#dwnld-btn').click(function(){
+                $('.ui-dialog').show();
                     $( "#dialog" ).dialog({
                         draggable: false
                     });
-                    rumvideo.play().catch(function(error) {
+                    video.play().catch(function(error) {
                         console.log('Error playing the video:', error);
                     });
                     $('.ui-dialog-titlebar-close').prop('id', 'closes');
+                    if( $("video").prop('muted') ) {
+                        $("video").prop('muted', true);
+                    } else {
+                    $("video").prop('muted', false);
+                    }
                 });
-                $('#closes').click(function(){
-                    rumvideo.pause();
+                if($(window).width() < 767){
+                $('video').addClass('h-100');
+                }
+                $('#close').click(function(){
+                    $('.ui-dialog').hide();
+                    video.pause();
                     $('video').addClass('d-none');
-                    $('video').prop('muted', true);
+                    
+                    return true;
                 });
             });
 
