@@ -6,7 +6,7 @@
         <link rel='preload' href="fonts/Poppins-Medium.woff2"  as="font" type="font/woff2" crossorigin >
         <link rel='preload' href="fonts/Poppins-SemiBold.woff2"  as="font" type="font/woff2" crossorigin >
         <link rel='preload' href="fonts/Poppins-Bold.woff2"  as="font" type="font/woff2" crossorigin >
-        <style>@media(max-width:767px){.dwnld-btn {position: fixed !important;}}</style>
+        <style>@media(max-width:767px){.position-fixed {position: fixed !important;}}</style>
         <link rel="preload" fetchpriority="high" as="image" href="img/banner-new-1.webp" type="image/webp">
         <link rel="preload" fetchpriority="high" as="image" href="img/banner-new-2.webp" type="image/webp">
         <link rel="preload" fetchpriority="high" as="image" href="img/banner-new-3.webp" type="image/webp">
@@ -84,7 +84,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- End Google Tag Manager -->
 <script src="js/jquery-3.7.1.min.js"></script>
 <script src="js/jquery-ui.min.js"></script>  
- <style>#dialog{display:none}</style>
+        <script>
+    $(document).ready(function(){
+        if($(window).width() < 767){
+                $('video').addClass('h-100');
+        }
+    });
+</script>
+ <style>#dialog{display:none}.position-fixed{position: relative;}</style>
     </head>
     <body>
         <header>
@@ -100,7 +107,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                             
                         </div> -->
                     </div>
-                    <div class="dwnld-btn">
+                    <div class="dwnld-btn position-fixed">
                         <a href="#" class="btn btn-red" id="dwnld-btn" onClick="downloadApp('header');">Download Now</a>
                         <p class="text-white">Get Free cash on daily login for 7 days</p>
                     </div>
@@ -411,11 +418,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 $('video').removeProp('autoplay');
                 $('button.ui-dialog-titlebar-close').attr('id', 'close-button');
 
-                if($(window).width() < 767){
-                $('video').addClass('h-100');
-                    $('.dwnld-btn').css('position','fixed');
-                }
-                
                 var $slide=$('.slider');
                 var $scrslide=$('.screen_slider');
                 var $clt_clider=$('.clnt_slider');
