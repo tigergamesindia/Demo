@@ -6,7 +6,6 @@
         <link rel='preload' href="fonts/Poppins-Medium.woff2"  as="font" type="font/woff2" crossorigin >
         <link rel='preload' href="fonts/Poppins-SemiBold.woff2"  as="font" type="font/woff2" crossorigin >
         <link rel='preload' href="fonts/Poppins-Bold.woff2"  as="font" type="font/woff2" crossorigin >
-        <style>@media(max-width:767px){.position-fixed {position: fixed !important;}}</style>
         <link rel="preload" fetchpriority="high" as="image" href="img/banner-new-1.webp" type="image/webp">
         <link rel="preload" fetchpriority="high" as="image" href="img/banner-new-2.webp" type="image/webp">
         <link rel="preload" fetchpriority="high" as="image" href="img/banner-new-3.webp" type="image/webp">
@@ -91,14 +90,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         }
     });
 </script>
- <style>#dialog{display:none}.position-fixed{position: relative;}</style>
+ <style>#dialog{display:none}.position-fixed{position:fixed;}.position-fixed p{font-size:12px}.position-fixed a{font-size: 18px;}</style>
     </head>
     <body>
         <header>
-            <div class="dwnld-btn1">
-                <a href="#" class="btn btn-red" id="dwnld-btn1" onClick="downloadApp('header');">Download Now</a>
-                <p class="text-white">Get Free cash on daily login for 7 days</p>
-            </div>
             <div class="container">
                 <div class="main-head">
                     <div class="logo-head">
@@ -111,7 +106,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                             
                         </div> -->
                     </div>
-                    <div class="dwnld-btn position-fixed">
+                    <div class="dwnld-btn" id="new-dwn-btn">
                         <a href="#" class="btn btn-red" id="dwnld-btn" onClick="downloadApp('header');">Download Now</a>
                         <p class="text-white">Get Free cash on daily login for 7 days</p>
                     </div>
@@ -413,6 +408,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         
         <script type="text/javascript" src="js/slick.min.js"></script>
         <script>
+            window.onscroll = function() {dwnbtn()};
+            
+            var header = document.getElementById("new-dwn-btn");
+            var sticky = header.offsetTop;
+            
+            function dwnbtn() {
+              if (window.pageYOffset > sticky) {
+                header.classList.add("position-fixed");
+              } else {
+                header.classList.remove("position-fixed");
+              }
+            }
+            </script>
+        <script>
             $(document).ready(function(){
                 var video = $('#myVideo').get(0);
                 $('.img1').removeClass('bimg');
@@ -505,7 +514,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     ]
                 });
             }
-            $('#dwnld-btn, #dwnld-btn1').click(function(){
+            $('#dwnld-btn').click(function(){
                 $('.ui-dialog').show();
                     $( "#dialog" ).dialog({
                         draggable: false
