@@ -83,23 +83,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- End Google Tag Manager -->
 <script src="js/jquery-3.7.1.min.js"></script>
 <script src="js/jquery-ui.min.js"></script>  
-        <script>
-    $(document).ready(function(){
-        if($(window).width() < 767){
-                $('video').addClass('h-100');
-        }
-    });
-</script>
+       
  <style>#dialog{display:none}.position-fixed{position:fixed;}.position-fixed p{font-size:12px}.position-fixed a{font-size: 18px;}</style>
     </head>
-    <body>
+    <body onload="dwnbtn()">
         <header>
             <div class="container">
                 <div class="main-head">
                     <div class="logo-head">
                         <div class="icon">
                             <img src="img/logo21.webp" class="logo-img" alt="Logo" width="60" height="60">
-                            <h1 class="text-green text-center mt-0">India's most trusted rummy platform</h1>
+                            <h1 class="text-green mt-0">India's most trusted rummy platform</h1>
                         </div>
                         <!-- <div class="logo-text pl-3">
                             <h1 class="text-white mb-0 mt-0">TigerGames</h1>
@@ -405,147 +399,136 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             </div>
         </footer>
                 
-        
-        <script type="text/javascript" src="js/slick.min.js"></script>
         <script>
-            window.onload = function() {
-    // Function to check if the user is on a mobile device
-    function isMobileDevice() {
-        return /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-    }
-
-    // If the device is mobile, add the class to the specific div tag
-    if (isMobileDevice()) {
-        var targetDiv = document.getElementById("new-dwn-btn");
-        if (targetDiv) {
-            targetDiv.classList.add("position-fixed");
-        }
-    }
-};
-
-            </script>
-        <script>
-            $(document).ready(function(){
-                var video = $('#myVideo').get(0);
-                $('.img1').removeClass('bimg');
-                $('.scimg').removeClass('bload');
-                $('.clnt_slider').removeClass('bload');
-                $('.test_card').removeClass('btest');
-                $('video').addClass('d-none');
-                $('video').removeProp('autoplay');
-                $('button.ui-dialog-titlebar-close').attr('id', 'close-button');
-
-                var $slide=$('.slider');
-                var $scrslide=$('.screen_slider');
-                var $clt_clider=$('.clnt_slider');
-                if($slide && $().slick ){
-                $('.slider').slick({
-                    dots: true,
-                    autoplay: true,
-                    autoplaySpeed: 4000,
-                    infinite: true,
-                    speed: 500,
-                    fade: false,
-                    cssEase: 'linear',
-                    touchThreshold:100,
-                    slidesToScroll: 1
-                });
-            }
-            if($slide && $().slick ){
-                $('.screen_slider').slick({
-                    centerMode: true,
-                    centerPadding: '60px',
-                    slidesToShow: 3,
-                    autoplay: true,
-                    autoplaySpeed: 4000,
-                    infinite: true,
-                    speed: 500,
-                    fade: false,
-                    cssEase: 'linear',
-                    touchThreshold:100,
-                    slidesToScroll: 1,
-                    responsive: [
-                        {
-                        breakpoint: 996,
-                        settings: {
-                            arrows: false,
-                            centerMode: true,
-                            centerPadding: '40px',
-                            slidesToShow: 2
-                        }
-                        },
-                        {
-                        breakpoint: 480,
-                        settings: {
-                            arrows: false,
-                            centerMode: true,
-                            centerPadding: '40px',
-                            slidesToShow: 1
-                        }
-                        }
-                    ]
-                });
-            }
-            if($clt_clider && $().slick ){
-                $('.clnt_slider').slick({
-                    slidesToShow: 3,
-                    autoplay: true,
-                    autoplaySpeed: 4000,
-                    infinite: true,
-                    speed: 500,
-                    fade: false,
-                    cssEase: 'linear',
-                    touchThreshold:100,
-                    slidesToScroll: 1,
-                    responsive: [
-                        {
-                        breakpoint: 996,
-                        settings: {
-                            arrows: false,
-                            slidesToShow: 2
-                        }
-                        },
-                        {
-                        breakpoint: 600,
-                        settings: {
-                            arrows: false,
-                            centerMode: true,
-                            centerPadding: '30px',
-                            slidesToShow: 1
-                        }
-                        }
-                    ]
-                });
-            }
-            $('#dwnld-btn').click(function(){
-                $('.ui-dialog').show();
-                    $( "#dialog" ).dialog({
-                        draggable: false
-                    });
-                    video.play().catch(function(error) {
-                        console.log('Error playing the video:', error);
-                    });
-                    $('.ui-dialog-titlebar-close').prop('id', 'closes');
-                    if( $("video").prop('muted') ) {
-                        $("video").prop('muted', true);
-                    } else {
-                    $("video").prop('muted', false);
-                    }
-                });
-                if($(window).width() < 767){
-                $('video').addClass('h-100');
+            function otherJquery(fn) {
+                if (document.readyState != 'loading') {
+                    fn();
+                } else {
+                    document.addEventListener('DOMContentLoaded', fn);
                 }
-                $('#close').click(function(){
-                    $('.ui-dialog').hide();
-                    video.pause();
-                    $('video').addClass('d-none');
-                    
-                    return true;
-                });
-            });
+            }
+            otherJquery(function name(params) {
+                var $ = jQuery;
+                var video = $('#myVideo').get(0);
+                            $('.img1').removeClass('bimg');
+                            $('.scimg').removeClass('bload');
+                            $('.clnt_slider').removeClass('bload');
+                            $('.test_card').removeClass('btest');
+                            $('video').addClass('d-none');
+                            $('video').removeProp('autoplay');
+                            $('button.ui-dialog-titlebar-close').attr('id', 'close-button');
 
-            
+                            var $slide=$('.slider');
+                            var $scrslide=$('.screen_slider');
+                            var $clt_clider=$('.clnt_slider');
+                            if($slide && $().slick ){
+                            $('.slider').slick({
+                                dots: true,
+                                autoplay: true,
+                                autoplaySpeed: 4000,
+                                infinite: true,
+                                speed: 500,
+                                fade: false,
+                                cssEase: 'linear',
+                                touchThreshold:100,
+                                slidesToScroll: 1
+                            });
+                        }
+                        if($slide && $().slick ){
+                            $('.screen_slider').slick({
+                                centerMode: true,
+                                centerPadding: '60px',
+                                slidesToShow: 3,
+                                autoplay: true,
+                                autoplaySpeed: 4000,
+                                infinite: true,
+                                speed: 500,
+                                fade: false,
+                                cssEase: 'linear',
+                                touchThreshold:100,
+                                slidesToScroll: 1,
+                                responsive: [
+                                    {
+                                    breakpoint: 996,
+                                    settings: {
+                                        arrows: false,
+                                        centerMode: true,
+                                        centerPadding: '40px',
+                                        slidesToShow: 2
+                                    }
+                                    },
+                                    {
+                                    breakpoint: 480,
+                                    settings: {
+                                        arrows: false,
+                                        centerMode: true,
+                                        centerPadding: '40px',
+                                        slidesToShow: 1
+                                    }
+                                    }
+                                ]
+                            });
+                        }
+                        if($clt_clider && $().slick ){
+                            $('.clnt_slider').slick({
+                                slidesToShow: 3,
+                                autoplay: true,
+                                autoplaySpeed: 4000,
+                                infinite: true,
+                                speed: 500,
+                                fade: false,
+                                cssEase: 'linear',
+                                touchThreshold:100,
+                                slidesToScroll: 1,
+                                responsive: [
+                                    {
+                                    breakpoint: 996,
+                                    settings: {
+                                        arrows: false,
+                                        slidesToShow: 2
+                                    }
+                                    },
+                                    {
+                                    breakpoint: 600,
+                                    settings: {
+                                        arrows: false,
+                                        centerMode: true,
+                                        centerPadding: '30px',
+                                        slidesToShow: 1
+                                    }
+                                    }
+                                ]
+                            });
+                        }
+                        $('#dwnld-btn').click(function(){
+                            $('.ui-dialog').show();
+                                $( "#dialog" ).dialog({
+                                    draggable: false
+                                });
+                                video.play().catch(function(error) {
+                                    console.log('Error playing the video:', error);
+                                });
+                                $('.ui-dialog-titlebar-close').prop('id', 'closes');
+                                if( $("video").prop('muted') ) {
+                                    $("video").prop('muted', true);
+                                } else {
+                                $("video").prop('muted', false);
+                                }
+                            });
+                            if($(window).width() < 767){
+                            $('video').addClass('h-100');
+                            }
+                            $('#close').click(function(){
+                                $('.ui-dialog').hide();
+                                video.pause();
+                                $('video').addClass('d-none');
+                                
+                                return true;
+                            });
+            });
+                    
         </script>
+        <script type="text/javascript" src="js/slick.min.js"></script>
         <script>
             document.addEventListener("DOMContentLoaded", function () {
               // // initialize Singular
