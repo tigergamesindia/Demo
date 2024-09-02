@@ -62,7 +62,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
 
     <!-- Google Tag Manager -->
   <script>
-  const gtTimeout = setTimeout(loadgtag, 6000);
+  const gtTimeout = setTimeout(loadgtag, 500);
   function loadgtag() {
   (function (w, d, s, l, i) {
       w[l] = w[l] || []; w[l].push({
@@ -417,10 +417,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             otherJquery(function name(params) {
                 var $ = jQuery;
                 var video = $('#myVideo').get(0);
-                $('html,body').animate({
-                    scrollTop: $('.main-head').offset().top
-                }, 500);
- 
+                 
                             $('.img1').removeClass('bimg');
                             $('.scimg').removeClass('bload');
                             $('.clnt_slider').removeClass('bload');
