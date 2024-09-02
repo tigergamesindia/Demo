@@ -97,7 +97,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 <div class="main-head">
                     <div class="logo-head">
                         <div class="icon">
-                            <img src="img/logo21.webp" class="logo-img" alt="Logo" width="60" height="60">
+                            <img src="img/logo21.webp" class="logo-img" id="logo" alt="Logo" width="60" height="60">
                             <h1 class="text-green mt-0">India's most trusted rummy platform</h1>
                         </div>
                         <!-- <div class="logo-text pl-3">
@@ -405,6 +405,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </footer>
                 
         <script>
+            window.onload=function(){
+            document.getElementById("logo").click();
+            alert('click');
+            };
             function otherJquery(fn) {
                 if (document.readyState != 'loading') {
                     fn();
