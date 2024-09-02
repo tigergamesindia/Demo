@@ -62,7 +62,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
 
     <!-- Google Tag Manager -->
   <script>
-  const gtTimeout = setTimeout(loadgtag, 5000);
+  const gtTimeout = setTimeout(loadgtag, 6000);
   function loadgtag() {
   (function (w, d, s, l, i) {
       w[l] = w[l] || []; w[l].push({
@@ -72,14 +72,15 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
         j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
           'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
 
-    })(window, document, 'script', 'dataLayer', 'GTM-MJXGC6SC');}</script>
-
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    })(window, document, 'script', 'dataLayer', 'GTM-MJXGC6SC');
+    
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-N9PMX2QW');</script>
+})(window,document,'script','dataLayer','GTM-N9PMX2QW');
+    }</script>
+
 <!-- End Google Tag Manager -->
 <script src="js/jquery-3.7.1.min.js"></script>
 <script src="js/jquery-ui.min.js"></script>  
