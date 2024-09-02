@@ -13,7 +13,6 @@
         <script rel="dns-prefetch" src="https://www.googletagmanager.com/gtag/js?id=AW-16628004387"></script>
         
         <style>
-            @media screen and (max-width:767px) {.main-head{display: grid !important;}}
             @font-face {font-family: 'Poppins-Regular';src: url(fonts/Poppins-Regular.woff2) format('woff2');font-weight: 400;font-display: swap;}
             @font-face {font-family: 'Poppins-Medium';src: url(fonts/Poppins-Medium.woff2) format('woff2');font-weight: 500;font-display: swap;}
             @font-face {font-family: 'Poppins-SemiBold';src: url(fonts/Poppins-SemiBold.woff2) format('woff2');font-weight: 600;font-display: swap;}
@@ -89,6 +88,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
  <style>#dialog{display:none}.position-fixed{position:fixed;}.position-fixed p{font-size:12px}.position-fixed a{font-size: 18px;}</style>
     </head>
     <body>
+        <div class="dwnld-btns mble" id="new-dwn-btn">
+            <a href="#" class="btn btn-red" id="dwnld-btn1" onClick="downloadApp('header');">Download Now</a>
+            <p class="text-white">Get Free cash on daily login for 7 days</p>
+        </div>
         <header>
             <div class="container">
                 <div class="main-head">
@@ -508,7 +511,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                                 ]
                             });
                         }
-                        $('#dwnld-btn').click(function(){
+                        $('#dwnld-btn, #dwnld-btn1').click(function(){
                             $('.ui-dialog').show();
                                 $( "#dialog" ).dialog({
                                     draggable: false
