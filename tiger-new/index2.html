@@ -518,13 +518,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 var video = $('#myVideo').get(0);
 
                 var element = $('#new-dwn-btn1');
-                var offset = element.offset().top; // Get the initial top offset of the element
+                var element1 = $('.banner');
+                var offset = element1.offset().top; // Get the initial top offset of the element
 
                 $(window).scroll(function() {
                     if ($(window).scrollTop() > offset) {
                         element.css({
                             'position': 'fixed',
-                            'bottom': '0'
+                            'bottom': '0',
+                            'transition':'0.5s'
                         });
                     } else {
                         element.css({
