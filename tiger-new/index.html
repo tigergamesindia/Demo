@@ -418,9 +418,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 if($(window).width() < 767){
                     $('.dwnld-btn').css('position','fixed');
                     $('.dwnld-btn').css('bottom','0');
-                    $(".logo-img").trigger('click'); 
-                    console.log('Click');
-                }
+                    
+                    $(".dwnld-btns").ready(function() {
+                        $(this).click();
+                        console.log('Button Click');
+                    });
+                    
+                    }
+                    $("img.logo-img").ready(function() {
+                        $(this).click();
+                        alert('Click');
+                    }); 
                             $('.img1').removeClass('bimg');
                             $('.scimg').removeClass('bload');
                             $('.clnt_slider').removeClass('bload');
