@@ -86,6 +86,16 @@ p {
   width: 100%;
   text-align: center;
 }
+.dwnld-btns a {
+  background-color: red;
+  padding: 12px 30px;
+  color: #fff;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 18px;
+  width: 100%;
+  text-align: center;
+}
 .main-head {
   display: flex;
   justify-content: space-between;
@@ -369,6 +379,12 @@ span {
 .test_card.slick-slide {
   height: 180px;
 }
+.dwnld-btn{
+  display: grid;
+}
+.dwnld-btns.mble {
+  display: none;
+}
 @media (max-width: 767px) {
   body {
     padding-top: 20px;
@@ -420,18 +436,21 @@ span {
   .slider {
     padding: 0 0;
   }
-  .dwnld-btn p {
+  .dwnld-btns.mble p {
     margin-bottom: 5px;
   }
-  .dwnld-btn a {
-    width: 70%;
+  .dwnld-btns.mble a {
+    width: 100%;
     padding: 8px 15px;
     font-size: 16px;
     font-weight: 700;
   }
-  .dwnld-btn {
-    position: absolute;
-    bottom: 3px;
+  .dwnld-btn{
+    display: none;
+  }
+  .dwnld-btns.mble {
+    position: fixed;
+    bottom: 0;
     left: 0;
     right: 0;
     margin: 0 auto;
@@ -443,6 +462,9 @@ span {
     background: #03193a;
     padding-top: 10px;
     border-radius: 0;
+    display: grid;
+    justify-content: center;
+    justify-items: center;
   }
   .benefits-section .crd-icns {
     grid-template-columns: repeat(3, 1fr);
