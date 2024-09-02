@@ -430,7 +430,7 @@ span {
     font-weight: 700;
   }
   .dwnld-btn {
-    position: relative;
+    position: absolute;
     bottom: 3px;
     left: 0;
     right: 0;
