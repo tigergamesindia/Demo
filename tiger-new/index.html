@@ -82,13 +82,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }</script>
 
 <!-- End Google Tag Manager -->
-<script src="js/jquery-3.7.1.min.js"></script>
-<script src="js/jquery-ui.min.js"></script>  
+
        
  <style>#dialog{display:none}.position-fixed{position:fixed;}.position-fixed p{font-size:12px}.position-fixed a{font-size: 18px;}</style>
     </head>
     <body>
-        <div class="dwnld-btns mble" id="new-dwn-btn">
+        <div class="dwnld-btns mble" id="new-dwn-btn1">
             <a href="#" class="btn btn-red" id="dwnld-btn1" onClick="downloadApp('header');">Download Now</a>
             <p class="text-white">Get Free cash on daily login for 7 days</p>
         </div>
@@ -403,12 +402,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 <p class="cpy-txt text-white text-center">@ Copyright ©TigerGames</p>
             </div>
         </footer>
-                
+        <script src="js/jquery-3.7.1.min.js"></script>
+        <script src="js/jquery-ui.min.js"></script>  
+        
         <script>
-            window.onload=function(){
-            document.getElementById("logo").click();
-            alert('click');
-            };
+            
             function otherJquery(fn) {
                 if (document.readyState != 'loading') {
                     fn();
@@ -419,20 +417,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             otherJquery(function name(params) {
                 var $ = jQuery;
                 var video = $('#myVideo').get(0);
-                if($(window).width() < 767){
-                    $('.dwnld-btn').css('position','fixed');
-                    $('.dwnld-btn').css('bottom','0');
-                    
-                    $(".dwnld-btns").ready(function() {
-                        $(this).click();
-                        console.log('Button Click');
-                    });
-                    
-                    }
-                    $("img.logo-img").ready(function() {
-                        $(this).click();
-                        alert('Click');
-                    }); 
+                $('html,body').animate({
+                    scrollTop: $('.main-head').offset().top
+                }, 500);
+ 
                             $('.img1').removeClass('bimg');
                             $('.scimg').removeClass('bload');
                             $('.clnt_slider').removeClass('bload');
