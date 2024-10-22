@@ -2,7 +2,7 @@
 
 <html lang="en-US">
     <head>
-        <style>html, body{background:#03193a !important;}</style>
+        <style>body{background:#03193a !important;}</style>
         <link rel='preload' href="fonts/Poppins-Regular.woff2"  as="font" type="font/woff2" crossorigin >
         <link rel='preload' href="fonts/Poppins-Medium.woff2"  as="font" type="font/woff2" crossorigin >
         <link rel='preload' href="fonts/Poppins-SemiBold.woff2"  as="font" type="font/woff2" crossorigin >
@@ -14,12 +14,12 @@
             @font-face {font-family: 'Poppins-SemiBold';src: url(fonts/Poppins-SemiBold.woff2) format('woff2');font-weight: 600;font-display: swap;}
             @font-face {font-family: 'Poppins-Bold';src: url(fonts/Poppins-Bold.woff2) format('woff2');font-weight: 700;font-display: swap;}
         </style>
-        <link rel="preload" fetchpriority="high" as="image" href="img/banner-new-1.webp" type="image/webp">
-        <link rel="preload" fetchpriority="high" as="image" href="img/banner-new-2.webp" type="image/webp">
-        <link rel="preload" fetchpriority="high" as="image" href="img/banner-new-3.webp" type="image/webp">
-        <link rel="preload" fetchpriority="high" as="image" href="img/mobile-banner-1.webp" type="image/webp">
-        <link rel="preload" fetchpriority="high" as="image" href="img/mobile-banner-2.webp" type="image/webp">
-        <link rel="preload" fetchpriority="high" as="image" href="img/mobile-banner-3.webp" type="image/webp">
+        <link rel="preload" fetchpriority="high" as="image" href="img/c1.webp" type="image/webp">
+        <link rel="preload" fetchpriority="high" as="image" href="img/c2.webp" type="image/webp">
+        <link rel="preload" fetchpriority="high" as="image" href="img/c3.webp" type="image/webp">
+        <link rel="preload" fetchpriority="high" as="image" href="img/c1-mobile.webp" type="image/avif">
+        <link rel="preload" fetchpriority="high" as="image" href="img/c2-mobile.webp" type="image/avif">
+        <link rel="preload" fetchpriority="high" as="image" href="img/c3-mobile.webp" type="image/avif">
         <script rel="dns-prefetch" src="https://www.googletagmanager.com/gtag/js?id=AW-16628004387"></script>
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <link rel="stylesheet" type="text/css" href="css/slick.css">
@@ -28,10 +28,10 @@
      
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>TigerGames</title>
+        <title>TigerGames - India's most trusted rummy platform</title>
         <meta name="robots" content="noindex, nofollow">
-        <meta name="description" content="India's most trusted rummy platform">
-        <meta name="keywords" content="India's most trusted rummy platform">
+        <meta name="description" content="India's most trusted rummy platform, best rummy game in india">
+        <meta name="keywords" content="India's most trusted rummy platform, rummy gamne, online rummy, money earn game">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="shortcut icon" href="img/tiger-logo.webp" type="image/webp" />
         <!-- Google tag (gtag.js) -->
@@ -136,24 +136,26 @@
         <section class="banner">
             <div class="">
                 <div class="slider slr">
-                    <div class="img1 bimg d-md-block d-none">
-                        <img src="img/banner-new-1.webp" alt="TigerGames" width="1000" height="650">
+                    <div class="img1 bimg">
+                        <picture>
+                            <source media="(min-width:501px)" srcset="img/c1.webp">
+                            <source media="(max-width:500px)" srcset="img/c1-mobile.webp">
+                            <img src="img/c1.webp" alt="TigerGames" width="1176" height="590">
+                          </picture>
                     </div>
-                    <div class="img1 bimg d-md-block d-none">
-                        <img src="img/banner-new-2.webp" alt="TigerGames" width="1000" height="650" loading="lazy">
+                    <div class="img1 bimg">
+                        <picture>
+                            <source media="(min-width:501px)" srcset="img/c2.webp">
+                            <source media="(max-width:500px)" srcset="img/c2-mobile.webp">
+                            <img src="img/c2.webp" alt="TigerGames" width="1176" height="590" loading="lazy">
+                          </picture>
                     </div>
-                    <div class="img1 bimg d-md-block d-none">
-                        <img src="img/banner-new-3.webp" alt="TigerGames" width="1000" height="650" loading="lazy">
-                    </div>
-
-                    <div class="img1 bimg d-md-none d-block">
-                        <img src="img/mobile-banner-1.webp" alt="TigerGames" width="425" height="250">
-                    </div>
-                    <div class="img1 bimg d-md-none d-block">
-                        <img src="img/mobile-banner-2.webp" alt="TigerGames" width="425" height="250" loading="lazy">
-                    </div>
-                    <div class="img1 bimg d-md-none d-block">
-                        <img src="img/mobile-banner-3.webp" alt="TigerGames" width="425" height="250" loading="lazy">
+                    <div class="img1 bimg">
+                        <picture>
+                            <source media="(min-width:501px)" srcset="img/c3.webp">
+                            <source media="(max-width:500px)" srcset="img/c3-mobile.webp">
+                            <img src="img/c3.webp" alt="TigerGames" width="1176" height="590" loading="lazy">
+                          </picture>
                     </div>
                 </div>
             </div>
@@ -327,9 +329,10 @@
                 <div class="about-app">
                     <div class="abt-section abs">
                         <h2 class="title text-white">About this App</h2>
-                        <p class="text-white">TigerGames offers a world-class online rummy gaming experience with a host of player-centric features, all designed to bring the thrill of the game to your fingertips. Our redesigned app allows you to play rummy anywhere, anytime – whether you're on a train, bus, metro, or relaxing at home.</p>
+                        <p class="text-white">Tigergames is a leading online gaming portal, owned and operated by Looke Digital Pvt. Ltd. TigerGames offers a world-class online rummy gaming experience with a host of player-centric features, all designed to bring the thrill of the game to your fingertips. Our redesigned app allows you to play rummy anywhere, anytime – whether you're on a train, bus, metro, or relaxing at home.</p>
                         <p class="text-white">You can download our all-new TigerGames app to upgrade to a world-class online gaming experience and a ton of new player-centric features.</p>
-                        <p class="text-white">Take your game with you, wherever and whenever! We know of your love for gaming and that's exactly why we have redesigned our app with a host of new features. You can now take your game with you on the move in a train, or a bus, or in metro or even as you sip a coffee sitting in your home. This is your chance to download the free online TigerGames app today and to enjoy just the way it should be played online.</p>
+                        <p class="text-white">Take your game with you, wherever and whenever! We know of your love for gaming and that's exactly why we have redesigned our app with a host of new features. You can now take your game with you on the move in a train, or a bus, or in metro or even as you sip a coffee sitting in your home. This is your chance to download the free online TigerGames app today and to enjoy just the way it should be played online. </p>
+                        <p class="text-white">Keeping gaming users interest in mind, platform provides with instant deposit and withdrawals. Users do not have to wait for transactions to happen. Along with that, there is 24*7 customer support to handle any query related to financial transaction and process quick settlements or refunds.</p>
                     </div>
                     <div class="video abs">
                         <iframe width="100%" loading="lazy" height="400" src="https://www.youtube.com/embed/ldikQVROzWY?si=EUd08ZMigQo2R20T" srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color: white; background: #f00;width: 15%;color:white;text-shadow:0 0 0.5em black;margin: auto; left: 1px; right: 0;border-radius: 20px;}</style><a href=https://www.youtube.com/embed/ldikQVROzWY?si=EUd08ZMigQo2R20T><img src=https://i.ytimg.com/vi/ldikQVROzWY/hqdefault.jpg loading='lazy' alt='How to write a meta description'><span>▶</span></a>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -449,7 +452,7 @@
                     </p>
                 </div>
                 <hr>
-                <p class="cpy-txt text-white text-center">@ Copyright ©TigerGames</p>
+                <p class="cpy-txt text-white text-center">© Copyright Looke Digital Pvt. Ltd.</p>
             </div>
             <!-- <div class="fix-whatsapp" >
                 <a href="https://api.whatsapp.com/send/?phone=919315134527&text=Hey%2C+I+am+interested+in+playing+rummy%21&type=phone_number&app_absent=0" target="_blank" rel="noreferrer">
