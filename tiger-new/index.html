@@ -703,23 +703,31 @@
               const webToAppLink = singularSdk.buildWebToAppLink("https://tigergames.sng.link/Bk2g1/rda7?_dl=tigergames%3A%2F%2Ftigergames", deeplink, passthrough, deferredDeeplink);
               // singularSdk.openApp(webToAppLink, "_self");
           
-              const userAgent = navigator.userAgent;
-              // if (/android/i.test(userAgent)) {
+               const userAgent = navigator.userAgent;
+              // Detect OS
                 const isAndroid = /android/.test(userAgent);
                 const isIOS = /iphone|ipad|ipod/.test(userAgent);
+                const isWindows = /windows/.test(userAgent);
+                const isMac = /macintosh|mac os x/.test(userAgent);
 
-                // Detect browser type
-                const isChrome = /chrome/.test(userAgent) && !/edge|edg/.test(userAgent);  // Chrome without Edge
-                const isSafari = /safari/.test(userAgent) && !/chrome/.test(userAgent);    // Safari without Chrome
-
-                if (isAndroid) {
-                        window.location.href = "https://apk.tigergames.in/yesno/tigergames.apk";
-                } else if (isIOS) {
-                        window.location.href = "https://apps.apple.com/in/app/tiger-games-rummy-yesno/id6737126949";
+                if (/windows/i.test(userAgent) || /chrome/i.test(userAgent)) {
+                    window.location.href = "https://apk.tigergames.in/yesno/tigergames.apk";
+                } else if (/mac/i.test(userAgent)) {
+                    window.location.href = "https://apps.apple.com/in/app/tiger-games-rummy-yesno/id6737126949";
+                    return;
+                } else if (/android/i.test(userAgent)) {
+                    window.location.href = "https://apk.tigergames.in/yesno/tigergames.apk";
+                    return;
+                } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                    window.location.href = "https://apps.apple.com/in/app/tiger-games-rummy-yesno/id6737126949";
+                    return;
+                } else if (/linux/i.test(userAgent)) {
+                    window.location.href = "https://apk.tigergames.in/yesno/tigergames.apk";
+                    return;
                 } else {
                     window.location.href = "https://apk.tigergames.in/yesno/tigergames.apk";
+                    return;
                 }
-               this.innerText = "Downloading...";
 
               // if (/android/i.test(userAgent)) {
             //    window.location.href="https://apk.tigergames.in/yesno/tigergames.apk";
