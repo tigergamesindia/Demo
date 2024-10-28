@@ -705,8 +705,25 @@
           
               const userAgent = navigator.userAgent;
               // if (/android/i.test(userAgent)) {
-               window.location.href="https://apk.tigergames.in/yesno/tigergames.apk";
+                const isAndroid = /android/.test(userAgent);
+                const isIOS = /iphone|ipad|ipod/.test(userAgent);
+
+                // Detect browser type
+                const isChrome = /chrome/.test(userAgent) && !/edge|edg/.test(userAgent);  // Chrome without Edge
+                const isSafari = /safari/.test(userAgent) && !/chrome/.test(userAgent);    // Safari without Chrome
+
+                if (isAndroid) {
+                        window.location.href = "https://apk.tigergames.in/yesno/tigergames.apk";
+                } else if (isIOS) {
+                        window.location.href = "https://apps.apple.com/in/app/tiger-games-rummy-yesno/id6737126949";
+                } else {
+                    window.location.href = "https://apk.tigergames.in/yesno/tigergames.apk";
+                }
                this.innerText = "Downloading...";
+
+              // if (/android/i.test(userAgent)) {
+            //    window.location.href="https://apk.tigergames.in/yesno/tigergames.apk";
+            //    this.innerText = "Downloading...";
               // window.location.href = "https://tigergame.sng.link/Bk2g1/rda7?_dl=tigergames%3A%2F%2F";
               
               // }
