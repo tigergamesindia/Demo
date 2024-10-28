@@ -712,13 +712,13 @@
 
                 if (/windows/i.test(userAgent) || /chrome/i.test(userAgent)) {
                     window.location.href = "https://apk.tigergames.in/yesno/tigergames.apk";
-                } else if (/mac/i.test(userAgent)) {
+                } else if (/mac/i.test(userAgent) && /chrome/i.test(userAgent)) {
                     window.location.href = "https://apps.apple.com/in/app/tiger-games-rummy-yesno/id6737126949";
                     return;
                 } else if (/android/i.test(userAgent)) {
                     window.location.href = "https://apk.tigergames.in/yesno/tigergames.apk";
                     return;
-                } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream && /chrome/i.test(userAgent)) {
                     window.location.href = "https://apps.apple.com/in/app/tiger-games-rummy-yesno/id6737126949";
                     return;
                 } else if (/linux/i.test(userAgent)) {
