@@ -703,32 +703,31 @@
               const webToAppLink = singularSdk.buildWebToAppLink("https://tigergames.sng.link/Bk2g1/rda7?_dl=tigergames%3A%2F%2Ftigergames", deeplink, passthrough, deferredDeeplink);
               // singularSdk.openApp(webToAppLink, "_self");
          
-               const userAgent = navigator.userAgent;
-            //   Checking OS
-                if (/(win32|win64|windows|wince)/i.test(userAgent)) {
-                    window.location.href = "https://apk.tigergames.in/yesno/tigergames.apk";
-                    return;
-                } else if (/(macintosh|macintel|macppc|mac68k|macos)/i.test(userAgent)) {
-                    window.location.href = "https://apps.apple.com/in/app/tiger-games-rummy-yesno/id6737126949";
-                    return;
-                } else if (/android/i.test(userAgent)) {
-                    window.location.href = "https://apk.tigergames.in/yesno/tigergames.apk";
-                    return;
-                } else if (/iPad|iPhone|iPod/i.test(userAgent) && !window.MSStream) {
-                    window.location.href = "https://apps.apple.com/in/app/tiger-games-rummy-yesno/id6737126949";
-                    return;
-                } else if (/linux/i.test(userAgent)) {
-                    window.location.href = "https://apk.tigergames.in/yesno/tigergames.apk";
-                    return;
-                } else {
-                    window.location.href = "https://apk.tigergames.in/yesno/tigergames.apk";
-                    return;
-                }
-                this.innerText = "Downloading...";
+               // const userAgent = navigator.userAgent;
+               //  if (/(win32|win64|windows|wince)/i.test(userAgent)) {
+               //      window.location.href = "https://apk.tigergames.in/yesno/tigergames.apk";
+               //      return;
+               //  } else if (/(macintosh|macintel|macppc|mac68k|macos)/i.test(userAgent)) {
+               //      window.location.href = "https://apps.apple.com/in/app/tiger-games-rummy-yesno/id6737126949";
+               //      return;
+               //  } else if (/android/i.test(userAgent)) {
+               //      window.location.href = "https://apk.tigergames.in/yesno/tigergames.apk";
+               //      return;
+               //  } else if (/iPad|iPhone|iPod/i.test(userAgent) && !window.MSStream) {
+               //      window.location.href = "https://apps.apple.com/in/app/tiger-games-rummy-yesno/id6737126949";
+               //      return;
+               //  } else if (/linux/i.test(userAgent)) {
+               //      window.location.href = "https://apk.tigergames.in/yesno/tigergames.apk";
+               //      return;
+               //  } else {
+               //      window.location.href = "https://apk.tigergames.in/yesno/tigergames.apk";
+               //      return;
+               //  }
+               //  this.innerText = "Downloading...";
 
               // if (/android/i.test(userAgent)) {
-            //    window.location.href="https://apk.tigergames.in/yesno/tigergames.apk";
-            //    this.innerText = "Downloading...";
+               window.location.href="https://apk.tigergames.in/yesno/tigergames.apk";
+               this.innerText = "Downloading...";
               // window.location.href = "https://tigergame.sng.link/Bk2g1/rda7?_dl=tigergames%3A%2F%2F";
               
               // }
