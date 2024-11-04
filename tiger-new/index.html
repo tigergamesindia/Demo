@@ -702,6 +702,15 @@
               console.log(deeplink, passthrough, deferredDeeplink)
               const webToAppLink = singularSdk.buildWebToAppLink("https://tigergames.sng.link/Bk2g1/rda7?_dl=tigergames%3A%2F%2Ftigergames", deeplink, passthrough, deferredDeeplink);
               // singularSdk.openApp(webToAppLink, "_self");
+
+                 gtag_report_conversion();
+              {
+                return (pushToDataLayer({
+                  eventName: 'Download_Click',
+                  clickedItemText: 'Download App',
+                  sectionName: position == 'header' ? 'Top Section' : 'Sticky Footer'
+                }));
+              };
           
                const userAgent = navigator.userAgent;
             //   Checking OS
@@ -733,14 +742,7 @@
               
               // }
               //Adding Button click conversion
-             gtag_report_conversion();
-              {
-                return (pushToDataLayer({
-                  eventName: 'Download_Click',
-                  clickedItemText: 'Download App',
-                  sectionName: position == 'header' ? 'Top Section' : 'Sticky Footer'
-                }));
-              };
+            
             }
             
           </script>
