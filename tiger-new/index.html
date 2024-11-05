@@ -703,7 +703,7 @@
               const webToAppLink = singularSdk.buildWebToAppLink("https://tigergames.sng.link/Bk2g1/rda7?_dl=tigergames%3A%2F%2Ftigergames", deeplink, passthrough, deferredDeeplink);
               // singularSdk.openApp(webToAppLink, "_self");
          
-               // const userAgent = navigator.userAgent;
+               const userAgent = navigator.userAgent;
                if (/(win32|win64|windows|wince)/i.test(userAgent)) {
                     window.location.href = "https://apk.tigergames.in/yesno/tigergames.apk";
                     return true;
