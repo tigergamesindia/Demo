@@ -617,12 +617,11 @@
                 if (/^\d{10}$/.test(number)) { // Ensure number is exactly 10 digits
                     var requestOptions = {
                         method: 'GET',
-                        redirect: 'follow',
-                        mode: 'no-cors'
-                    };
+                        redirect: 'follow'                    };
             
                     fetch(`https://msgn.mtalkz.com/api?apikey=RH0rsPt57Bgwv1LS&senderid=UspStd&number=${number}&message=Hey! Use your skills and share your opinion on YesNo! Download the Tigergames app now! Get bonus cash on signup http://bit.ly/3HgU6pa USP Studios&format=json`, requestOptions)
                         .then(response => {
+                            console.log(response);
                             if (response.ok) {
                                 return response.text();
                             } else {
