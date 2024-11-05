@@ -617,27 +617,28 @@
                 if (/^\d{10}$/.test(number)) { // Ensure number is exactly 10 digits
                     var requestOptions = {
                         method: 'GET',
-                        redirect: 'follow'                    };
+                        redirect: 'follow', 
+                        mode: 'no-cors'                   
+                    };
             
                     fetch(`https://msgn.mtalkz.com/api?apikey=RH0rsPt57Bgwv1LS&senderid=UspStd&number=${number}&message=Hey! Use your skills and share your opinion on YesNo! Download the Tigergames app now! Get bonus cash on signup http://bit.ly/3HgU6pa USP Studios&format=json`, requestOptions)
-                        .then(response => {
-                            console.log(response);
-                            if (response.ok) {
-                                return response.text();
-                            } else {
-                                throw new Error("Message sending failed.");
-                            }
-                        })
-                        .then(result => {
-                            console.log(result);
-                            // Show success message modal
-                            const messageModal = document.getElementById('messageModal');
-                            messageModal.showModal();
-                        })
-                        .catch(error => {
-                            console.log('Error:', error);
-                            alert("Failed to send message. Please try again later.");
-                        });
+    .then(response => {
+        if (response.ok) {
+            return response.text();
+        } else {
+            throw new Error(`Error: ${response.status} - ${response.statusText}`);
+        }
+    })
+    .then(result => {
+        console.log(result);
+        // Show success message modal
+        const messageModal = document.getElementById('messageModal');
+        messageModal.showModal();
+    })
+    .catch(error => {
+        console.error('Detailed Error:', error);
+        alert("Failed to send message. Please try again later.");
+    });
             
                     // Clear the input field
                     document.getElementById("mobile-landing").value = "";
