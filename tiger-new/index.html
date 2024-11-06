@@ -599,6 +599,7 @@
             });
                     
         </script>
+        <script src="js/jquery-3.7.1.min.js"></script>
         <script type="text/javascript" src="js/slick.min.js"></script>
        <script>
             function limitInputLength(input) {
@@ -609,42 +610,24 @@
             }
             
             function sendMessage(e) {
-                e.preventDefault(); // Prevent the form from submitting
-            
-                var number = document.getElementById("mobile-landing").value;
-                
-                // Validate the mobile number
-                if (/^\d{10}$/.test(number)) { // Ensure number is exactly 10 digits
+                e.preventDefault();
+                var number = document.getElementById("mobile-landing").value
+                if (number.length === 10) {
                     var requestOptions = {
                         method: 'GET',
-                        redirect: 'follow'
+                        redirect: 'follow',
+                        mode: 'no-cors'
                     };
-            
-                    fetch(`https://msgn.mtalkz.com/api?apikey=RH0rsPt57Bgwv1LS&senderid=UspStd&number=${number}&message=Hey! Use your skills and share your opinion on YesNo! Download the Tigergames app now! Get bonus cash on signup http://bit.ly/3HgU6pa USP Studios&format=json`, requestOptions)
-    .then(response => {
-        if (response.ok) {
-            return response.text();
-        } else {
-            throw new Error(`Error: ${response.status} - ${response.statusText}`);
-        }
-    })
-    .then(result => {
-        console.log(result);
-        // Show success message modal
-        const messageModal = document.getElementById('messageModal');
-        messageModal.showModal();
-    })
-    .catch(error => {
-        console.error('Detailed Error:', error);
-        alert("Failed to send message. Please try again later.");
-    });
-            
-                    // Clear the input field
+
+                    fetch("https://msgn.mtalkz.com/api?apikey=RH0rsPt57Bgwv1LS&senderid=UspStd&number=" + number + "&message=Hey! Use your skills and share your opinion on YesNo! Download the Tigergames app now! Get bonus cash on signup http://bit.ly/3HgU6pa USP Studios&format=json", requestOptions)
+                        .then(response => response.text())
+                        .then(result => console.log(result))
+                        .catch(error => console.log('error', error));
+
                     document.getElementById("mobile-landing").value = "";
-                } else {
-                    // Show validation error
-                    alert('Please enter a valid 10-digit mobile number.');
-                    document.getElementById("mobile-landing").focus(); // Focus on the input field
+
+                    const messageModal = document.getElementById('messageModal');
+                    messageModal.showModal();
                 }
             }
             </script>
