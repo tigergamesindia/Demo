@@ -3,10 +3,7 @@
 <html lang="en-US">
     <head>
         <style>body{background:#03193a !important;}</style>
-        <link rel='preload' href="fonts/Poppins-Regular.woff2"  as="font" type="font/woff2" crossorigin >
-        <link rel='preload' href="fonts/Poppins-Medium.woff2"  as="font" type="font/woff2" crossorigin >
-        <link rel='preload' href="fonts/Poppins-SemiBold.woff2"  as="font" type="font/woff2" crossorigin >
-        <link rel='preload' href="fonts/Poppins-Bold.woff2"  as="font" type="font/woff2" crossorigin >
+        
         <style>
             @media screen and (max-width:767px) {.main-head{display: grid !important;}}
             @font-face {font-family: 'Poppins-Regular';src: url(fonts/Poppins-Regular.woff2) format('woff2');font-weight: 400;font-display: swap;}
@@ -599,7 +596,6 @@
             });
                     
         </script>
-        <script src="js/jquery-3.7.1.min.js"></script>
         <script type="text/javascript" src="js/slick.min.js"></script>
        <script>
             function limitInputLength(input) {
@@ -709,38 +705,30 @@
               console.log(deeplink, passthrough, deferredDeeplink)
               const webToAppLink = singularSdk.buildWebToAppLink("https://tigergames.sng.link/Bk2g1/rda7?_dl=tigergames%3A%2F%2Ftigergames", deeplink, passthrough, deferredDeeplink);
               // singularSdk.openApp(webToAppLink, "_self");
-         
-               const userAgent = navigator.userAgent;
-               if (/(win32|win64|windows|wince)/i.test(userAgent)) {
+          
+              const userAgent = navigator.userAgent;
+              if (/(win32|win64|windows|wince)/i.test(userAgent)) {
                     window.location.href = "https://apk.tigergames.in/yesno/tigergames.apk";
-                    return true;
-                    
-                } else if (/(macintosh|macintel|macppc|mac68k|macos)/i.test(userAgent)) {
+                }
+                else if (/(macintosh|macintel|macppc|mac68k|macos)/i.test(userAgent)) {
                     window.location.href = "https://apps.apple.com/in/app/tiger-games-rummy-yesno/id6737126949";
-                    return true;
                 } else if (/android/i.test(userAgent)) {
                     window.location.href = "https://apk.tigergames.in/yesno/tigergames.apk";
-                    return true;
                 } else if (/iPad|iPhone|iPod/i.test(userAgent) && !window.MSStream) {
                     window.location.href = "https://apps.apple.com/in/app/tiger-games-rummy-yesno/id6737126949";
-                    return true;
                 } else if (/linux/i.test(userAgent)) {
                     window.location.href = "https://apk.tigergames.in/yesno/tigergames.apk";
-                    return true;
                 } else {
                     window.location.href = "https://apk.tigergames.in/yesno/tigergames.apk";
-                    return true;
                 }
-                this.innerText = "Downloading...";
-
               // if (/android/i.test(userAgent)) {
-               // window.location.href="https://apk.tigergames.in/yesno/tigergames.apk";
-               // this.innerText = "Downloading...";
+            //    window.location.href="https://apk.tigergames.in/yesno/tigergames.apk";
+            //    this.innerText = "Downloading...";
               // window.location.href = "https://tigergame.sng.link/Bk2g1/rda7?_dl=tigergames%3A%2F%2F";
               
               // }
               //Adding Button click conversion
-                gtag_report_conversion();
+              gtag_report_conversion()
               {
                 return (pushToDataLayer({
                   eventName: 'Download_Click',
